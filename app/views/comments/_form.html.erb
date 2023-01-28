@@ -1,0 +1,10 @@
+<%=form_with(model: [ @article, @article.comments.build ], url: article_comments_path(@article), method: :post) do |form| %>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public', class: 'form-control' %> <br/>
+	<%= form.label :commenter, 'Author:' %><br>
+    <%= form.text_field :commenter, placeholder: 'bbb' %><br/>
+
+    <%= form.label :body, 'Comment text:', placeholder: 'test' %><br>
+    <%= form.text_area :body, placeholder: 'hh' %><br/>
+
+    <%= form.submit %>
+<% end %>

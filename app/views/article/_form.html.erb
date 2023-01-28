@@ -1,0 +1,28 @@
+<%= form_with(model: @article, url: path, method: method_form) do |form| %>
+  <div class="mb-3">
+    <label for="floatingInput" class="form-label"><%= form.label :status, 'Status:' %></label>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public', class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <label for="floatingInput" class="form-label"><%= form.label :title, 'Title:' %></label>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <% for message in @article.errors.full_messages_for(:title) %>
+    <div class="alert alert-warning"><%= message %></div>
+  <% end %>
+
+  <div class="mb-3">
+    <label for="floatingTextarea2" class="form-label"><%= form.label :body, 'Article text:' %></label>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
+ 
+  <% for message in @article.errors.full_messages_for(:body) %>
+    <div class="alert alert-warning"><%= message %></div>
+  <% end %>
+
+  <div>
+    <%= form.submit 'hey', class: 'btn btn-dark mt-3' %>
+  </div>
+<% end %>

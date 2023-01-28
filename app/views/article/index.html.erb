@@ -1,0 +1,14 @@
+<h1 class="mt-1">Article list</h1>
+<br/>
+<div class="row mb-4">
+	<div class="col-md-4">
+		<strong>Redis test value:</strong> <%=@test%>
+		<h5>Active articles amount: <%= Article.public_count %></h5>
+	</div>
+	<div class="col-md-8">
+		<%= render 'top_buttons' %>
+	</div>
+</div>
+<div class="row mb-4">
+	<%= render 'article_list' %>
+</div>

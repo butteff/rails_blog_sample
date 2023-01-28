@@ -1,0 +1,13 @@
+<% for comment in @article.comments %>
+	<% unless comment.archived? %>
+	<strong>Author:</strong> <br/>
+	<%=comment.commenter%> <br/>
+	<strong>Comment:</strong> <br/>
+	<%=comment.body%> <br/>
+	<%= link_to 'Delete', article_comment_path(comment.article_id, comment.id), data: {
+		turbo_method: :delete,
+		turbo_confirm: "Are you sure?"
+	}%>
+	<% end %>
+	<hr/>
+<% end %>

@@ -1,0 +1,39 @@
+<ul class="list-group">
+	<% for article in @articles %>
+		<% unless article.archived? %>
+	
+		<li class="list-group-item d-flex justify-content-between align-items-start">
+		    <div class="ms-2 me-auto">
+		      	<div class="fw-bold"><h5><%= link_to article.title, article, class: 'text-primary-emphasis' %></h5></div>
+		      	
+		      	<% if current_user && article.user_id == current_user.id %>
+		      	<small>
+		      			Author: <%= current_user.email.gsub(/@.*/, '') %> (you)
+		      			
+		      			<span class="px-2"> [ <%= link_to 'Edit', edit_article_path(article), class: 'link-secondary' %> | 
+						<%= link_to 'Delete', article_path(article), class: 'link-secondary', data: {
+							turbo_method: :delete,
+							turbo_confirm: "Are you sure?"
+						}%> ]
+						</span>
+				</small>
+				<% else %>
+					<% if article.status == 'private' %>
+						<small>You are not allowed to read this article or see any info regarding it, only authors can do it</small>
+					<% elsif article.user_id && !@authors[article.user_id].nil? %>
+						<small>Author: <%=@authors[article.user_id]%></small>
+					<% else %>
+						<small>Author: unknown</small>
+					<% end %>
+				<% end %>
+		    </div>
+		    <% if article.status == 'public' %>
+		    	<span class="badge bg-success rounded-pill"><%= article.status %></span>
+		    <% else %>
+		    	<span class="badge bg-warning rounded-pill"><%= article.status %></span>
+		    <% end %>
+  		</li>
+
+		<% end %>
+	<% end %>
+</ul>
