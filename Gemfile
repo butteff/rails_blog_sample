@@ -15,9 +15,11 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem 'dotenv-rails'
-gem 'sidekiq'
-gem 'resque'
-gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'sidekiq' #queue provider
+gem 'resque' #another one So I can install additional libs here
+gem 'devise', '~> 4.8', '>= 4.8.1' #auth lib
+gem 'rspec'
+gem 'rspec-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
