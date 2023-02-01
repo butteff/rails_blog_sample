@@ -1,15 +1,16 @@
 class ArticleController < ApplicationController
   include ApplicationHelper
+  include ActionView::Helpers::SanitizeHelper
   require 'redis'
-
+  
   #basic oauth Let's implement it too
   #http_basic_authenticate_with name: "lol", password: "test", except: [:index, :show]
   before_action :require_login, except: [:show, :index]
 
   def index
     redis = Redis.new()
-    redis.set('test', 'again from rails video test hello!') 
-    @test = redis.get('test')
+    redis.set('test', '<script>alert(\'hello\')</script><h1>Redis value with sanitized tags</h1>') 
+    @test = strip_tags(redis.get('test'))
     @articles = Article.all
     @authors = []
 
