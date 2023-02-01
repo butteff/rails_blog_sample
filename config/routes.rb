@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get '/autoadd', to: "article#autoadd"
   get '/sendmail', to: "article#sendmail"
   get '/flash', to: 'article#flash'
+  get '/cookie_info', to: 'cookieshow#info'
 end

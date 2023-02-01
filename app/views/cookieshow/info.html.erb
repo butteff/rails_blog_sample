@@ -1,0 +1,14 @@
+<h1>Sessions and Cookies</h1>
+
+<div class="row">
+	<div class="col-md-12">
+		<ul class="list-group">
+		  <li class="list-group-item"><strong>Session id:</strong> <%=@session.id%></li>
+		  
+		  <% @cookie.each do |key, value| %>
+		  	<li class="list-group-item"><strong><%=key%>:</strong> <%=value%></li>
+		  <% end %>
+		 
+		</ul>
+	</div>
+</div>
