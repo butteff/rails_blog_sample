@@ -1,5 +1,5 @@
 # rails_blog_sample
-Just an example of rails app (during my ruby education), which has these list of functionalities inside:
+Just an example of rails app (during my ruby education), which has this list of functionalities inside:
 
 * ruby language basics +
 * rails install +
