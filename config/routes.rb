@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get '/sendmail', to: "article#sendmail"
   get '/flash', to: 'article#flash'
   get '/cookie_info', to: 'cookieshow#info'
+  get '/chat', to: 'sockets#chat'
+  post '/chatpost', to: 'sockets#post'
 end
