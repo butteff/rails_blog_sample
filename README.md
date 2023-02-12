@@ -31,3 +31,4 @@ Just an example of rails app (during my ruby education), which has this list of 
 * Login\Registration functionality (devise gem lib) +
 * unit tests (RSpec based) +
 * Sessions and cookies +
+* Websockets (ActionCable) +
