@@ -13,17 +13,12 @@
 
   <div>
     <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div>
-    <%= form.label :text, style: "display: block" %>
-    <%= form.text_area :text %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
   </div>
 
   <div>

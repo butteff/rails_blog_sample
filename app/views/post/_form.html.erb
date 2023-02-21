@@ -1,0 +1,13 @@
+<hr/>
+<h3>Add post:</h3>
+<%=form_with(model: [ @board, @board.posts.build ], url: newpost_path(@board), method: :post) do |form| %>
+
+   
+    <%= form.text_area :body, placeholder: 'post text' %><br/>
+
+    <%= form.label :image, style: "display: block" %>
+    <%= form.file_field :image %>
+
+    <%= form.submit %>
+<% end %>
+<hr/>

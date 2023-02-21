@@ -1,2 +1,0 @@
-class Hey < ApplicationRecord
-end

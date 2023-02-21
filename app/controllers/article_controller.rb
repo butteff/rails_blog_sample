@@ -90,8 +90,7 @@ class ArticleController < ApplicationController
   private
     def require_login
       if current_user.nil?
-        #flash[:error] = "You must be logged in to access this section"
-        redirect_to new_user_session_path # halts request cycle
+        redirect_to new_user_session_path, notice: "You need to be logged in"
       end
     end
 end

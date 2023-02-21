@@ -4,7 +4,7 @@
 
 <div id="boards">
   <% @boards.each do |board| %>
-    <%= render board %>
+    <%= render 'preview', board: board %>
     <p>
       <%= link_to "Show this board", board %>
     </p>

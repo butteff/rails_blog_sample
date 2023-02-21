@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   get '/cookie_info', to: 'cookieshow#info'
   get '/chat', to: 'sockets#chat'
   post '/chatpost', to: 'sockets#post'
+  post '/newpost', to: 'post#create'
 end

@@ -20,6 +20,7 @@ gem 'resque' #another one So I can install additional libs here
 gem 'devise', '~> 4.8', '>= 4.8.1' #auth lib
 gem 'rspec'
 gem 'rspec-rails'
+gem "image_processing", ">= 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -1,0 +1,12 @@
+<% for post in @board.posts %>
+	<div class="row">
+		<div class="col-md-12 border mt-2 rounded">
+			
+			<% if post.image.persisted? %>
+			<%= image_tag post.image.variant(:thumb), class: 'rounded float-start m-2' %>
+			<% end %>
+			<%=post.body%>
+			
+		</div>
+	</div>
+<% end %>

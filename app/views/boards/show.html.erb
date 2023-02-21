@@ -2,9 +2,11 @@
 
 <%= render @board %>
 
+<%= render 'post/posts', board: @board %>
+<%= render 'post/form', board: @board %>
+
 <div>
-  <%= link_to "Edit this board", edit_board_path(@board) %> |
   <%= link_to "Back to boards", boards_path %>
 
-  <%= button_to "Destroy this board", @board, method: :delete %>
+  <% # button_to "Destroy this board", @board, method: :delete %>
 </div>
