@@ -32,3 +32,5 @@ Just an example of rails app (during my ruby education), which has this list of 
 * unit tests (RSpec based) +
 * Sessions and cookies +
 * Websockets (ActionCable) +
+* Scuffold generation try +
+* ActiveStorage +
